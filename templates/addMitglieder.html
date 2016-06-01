@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <section>
+            <form action="/mitglieder/addMitglied/" method="post" autocomplete="on">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td>{{ mitgliederForm.vorname.label_tag }}</td>
+                        <td>{{ mitgliederForm.vorname }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.nachname.label_tag }}</td>
+                        <td>{{ mitgliederForm.nachname }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.anschrift.label_tag }}</td>
+                        <td>{{ mitgliederForm.anschrift }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.plz.label_tag }}</td>
+                        <td>{{ mitgliederForm.plz }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.geburtsdatum.label_tag }}</td>
+                        <td>{{ mitgliederForm.geburtsdatum }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.telefon.label_tag }}</td>
+                        <td>{{ mitgliederForm.telefon }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.mobil.label_tag }}</td>
+                        <td>{{ mitgliederForm.mobil }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.email.label_tag }}</td>
+                        <td>{{ mitgliederForm.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.iban.label_tag }}</td>
+                        <td>{{ mitgliederForm.iban }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.bic.label_tag }}</td>
+                        <td>{{ mitgliederForm.bic }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.bank.label_tag }}</td>
+                        <td>{{ mitgliederForm.bank }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.kontoinhaber.label_tag }}</td>
+                        <td>{{ mitgliederForm.kontoinhaber }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.lastschrift.label_tag }}</td>
+                        <td>{{ mitgliederForm.lastschrift }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.betrag.label_tag }}</td>
+                        <td>{{ mitgliederForm.betrag }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.barzahler.label_tag }}</td>
+                        <td>{{ mitgliederForm.barzahler }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ mitgliederForm.new_sepa.label_tag }}</td>
+                        <td>{{ mitgliederForm.new_sepa}}</td>
+                    </tr>
+                </table>
+                <p class="login button">
+                    <input type="submit" class="btn btn-success" value="Mitglied hinzufügen"/> <a class="btn btn-warning" href="/mitglieder/list/">Abbrechen</a>
+                </p>
+            </form>
+        </section>
+    </div>
+
+{% endblock %}

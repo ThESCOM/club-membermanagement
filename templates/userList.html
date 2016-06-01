@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h4>Benutzer Liste</h4>
+        <a class="btn btn-primary" href="/user/addUser">Benutzer hinzufügen</a><br />
+        <table style="margin-top: 10px;" id="userTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in userList %}
+                <tr>
+                    <td>{{ entry.email }}</td>
+                    <!--<td><a title="Benutzer bearbeiten" href="/user/editUser/{{ entry.id }}"><span class="glyphicon glyphicon-edit"></span></a></td>-->
+                    <!--<td><a title="Benutzer entfernen" href="/user/deleteUser/{{ entry.id }}"><span class="glyphicon glyphicon-trash"></span></a></td>-->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

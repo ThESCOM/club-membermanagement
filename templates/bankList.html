@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h4>Mitglied {{ mitglied.vorname }} {{ mitglied.nachname }} Bank Daten</h4>
+        <a class="btn btn-primary" href="/mitglieder/editMitglied/{{ mitglied.id }}">Mitglied bearbeiten</a><br />
+        <table style="margin-top: 10px;" id="bankTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>IBAN</th>
+                    <th>Bic</th>
+                    <th>Bank</th>
+                    <th>Kontoinhaber</th>
+                    <th>Lastschrift aktiv?</th>
+                    <th>Betrag</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ mitglied.vorname }}</td>
+                    <td>{{ mitglied.nachname }}</td>
+                    <td>{{ mitglied.iban }}</td>
+                    <td>{{ mitglied.bic }}</td>
+                    <td>{{ mitglied.bank }}</td>
+                    <td>{{ mitglied.kontoinhaber }}</td>
+                    <td>{{ mitlgied.lastschrift }}</td>
+                    <td>{{ mitglied.betrag }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
