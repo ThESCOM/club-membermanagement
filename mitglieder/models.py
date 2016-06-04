@@ -3,6 +3,10 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+BETRAG = (('20', '20'),
+          ('100', '100'),
+        )
+
 class Mitglied(models.Model):
     vorname = models.CharField(_("Vorname"), blank=False, null=False, max_length=50)
     nachname = models.CharField(_("Nachname"), blank=False, null=False, max_length=50)
@@ -18,5 +22,5 @@ class Mitglied(models.Model):
     kontoinhaber = models.CharField(_("Kontoinhaber"), blank=True, null=True, max_length=50)
     lastschrift = models.BooleanField(_("Lastschrift aktiv"), default=False)
     barzahler = models.BooleanField(_("Barzahler"), default=False)
-    betrag = models.FloatField(_("Betrag"))
+    betrag = models.CharField(_("Betrag"), choices=BETRAG, default='20', max_length=5)
     mandatsreferenz = models.CharField(_("Mandatsreferenz"), blank=True, null=True, max_length=200)

@@ -1,6 +1,6 @@
 import datetime
 from django import forms
-from mitglieder.models import Mitglied
+from mitglieder.models import Mitglied, BETRAG
 import datetime
 
 class MitgliederForm(forms.ModelForm):
@@ -19,7 +19,7 @@ class MitgliederForm(forms.ModelForm):
     kontoinhaber = forms.CharField(widget = forms.widgets.TextInput, label = "Kontoinhaber", required = False)
     lastschrift = forms.BooleanField(widget=forms.CheckboxInput, label='Lastschrift aktiv', required=False)
     barzahler = forms.BooleanField(widget=forms.CheckboxInput, label='Barzahler',required=False)
-    betrag = forms.FloatField(label="Betrag", initial=20)
+    betrag = forms.CharField(widget=forms.Select(choices=BETRAG),label="Betrag")
     mandatsreferenz = forms.CharField(widget=forms.widgets.TextInput, label="Mandatsreferenz (ID_Datum)", required=False)
 
 
