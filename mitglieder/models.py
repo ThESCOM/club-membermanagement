@@ -19,3 +19,4 @@ class Mitglied(models.Model):
     lastschrift = models.BooleanField(_("Lastschrift aktiv"), default=False)
     barzahler = models.BooleanField(_("Barzahler"), default=False)
     betrag = models.FloatField(_("Betrag"))
+    mandatsreferenz = models.CharField(_("Mandatsreferenz"), blank=True, null=True, max_length=200)

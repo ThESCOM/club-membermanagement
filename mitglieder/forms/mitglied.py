@@ -1,6 +1,7 @@
 import datetime
 from django import forms
 from mitglieder.models import Mitglied
+import datetime
 
 class MitgliederForm(forms.ModelForm):
 
@@ -19,20 +20,33 @@ class MitgliederForm(forms.ModelForm):
     lastschrift = forms.BooleanField(widget=forms.CheckboxInput, label='Lastschrift aktiv', required=False)
     barzahler = forms.BooleanField(widget=forms.CheckboxInput, label='Barzahler',required=False)
     betrag = forms.FloatField(label="Betrag", initial=20)
-    new_sepa = forms.BooleanField(widget=forms.CheckboxInput, label='Korrekter Antrag', required=False)
+    mandatsreferenz = forms.CharField(widget=forms.widgets.TextInput, label="Mandatsreferenz (ID_Datum)", required=False)
 
 
     class Meta:
         model = Mitglied
         fields = [ 'vorname', 'nachname', 'anschrift', 'plz', 'geburtsdatum',
                 'telefon', 'mobil', 'email', 'iban', 'bic', 'bank',
-                'kontoinhaber', 'lastschrift', 'betrag', 'barzahler', 'new_sepa']
+                'kontoinhaber', 'lastschrift', 'betrag', 'barzahler', 'mandatsreferenz']
 
     def save(self, commit=True):
         mitglied = super(MitgliederForm, self).save(commit=False)
 
         if not self.cleaned_data['kontoinhaber']:
             mitglied.kontoinhaber = u'{0} {1}'.format(self.cleaned_data['vorname'], self.cleaned_data['nachname'])
+
+        if not self.cleaned_data['mandatsreferenz']:
+            mitgliedID = 0
+            for entry in Mitglieder.objects.all():
+                if entry.id > mitgliedID:
+                    mitgliedID = entry.id
+
+            mitgliedID += 1
+
+            if mitglied.id:
+                mitgliedID = mitglied.id
+
+            mitglied.mandatsreferenz = '{0}_{1}'.format(mitgliedID, datetime.date.today().strftime("%Y%m%d"))
 
         if commit:
             mitglied.save()
