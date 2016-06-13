@@ -37,6 +37,10 @@ class MitgliederForm(forms.ModelForm):
         if not self.cleaned_data['kontoinhaber']:
             mitglied.kontoinhaber = u'{0} {1}'.format(self.cleaned_data['vorname'], self.cleaned_data['nachname'])
 
+        # if no email exists, he can not be part of a mailverteiler
+        if not self.cleaned_data['email']:
+            mitglied.mailverteiler = False
+
         if not self.cleaned_data['mandatsreferenz']:
             mitgliedID = 0
             for entry in Mitglieder.objects.all():
