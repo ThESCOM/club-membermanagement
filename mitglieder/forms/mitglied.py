@@ -21,13 +21,15 @@ class MitgliederForm(forms.ModelForm):
     barzahler = forms.BooleanField(widget=forms.CheckboxInput, label='Barzahler',required=False)
     betrag = forms.CharField(widget=forms.Select(choices=BETRAG),label="Betrag")
     mandatsreferenz = forms.CharField(widget=forms.widgets.TextInput, label="Mandatsreferenz (ID_Datum)", required=False)
+    mailverteiler = forms.BooleanField(widget=forms.CheckboxInput, label='Mailverteiler Mitglied', required=False)
 
 
     class Meta:
         model = Mitglied
         fields = [ 'vorname', 'nachname', 'anschrift', 'plz', 'geburtsdatum',
                 'telefon', 'mobil', 'email', 'iban', 'bic', 'bank',
-                'kontoinhaber', 'lastschrift', 'betrag', 'barzahler', 'mandatsreferenz']
+                'kontoinhaber', 'lastschrift', 'betrag', 'barzahler',
+                'mandatsreferenz', 'mailverteiler']
 
     def save(self, commit=True):
         mitglied = super(MitgliederForm, self).save(commit=False)

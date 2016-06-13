@@ -24,3 +24,4 @@ class Mitglied(models.Model):
     barzahler = models.BooleanField(_("Barzahler"), default=False)
     betrag = models.CharField(_("Betrag"), choices=BETRAG, default='20', max_length=5)
     mandatsreferenz = models.CharField(_("Mandatsreferenz"), blank=True, null=True, max_length=200)
+    mailverteiler = models.BooleanField(_("Mailverteiler"), default=True)
