@@ -131,3 +131,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
 
 VEREINSNAME = 'VEREIN'
+
+LOCALE_PATHS = ( os.path.join(os.path.dirname(__file__), "locale"),)
