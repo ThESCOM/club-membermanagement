@@ -52,7 +52,7 @@ class MitgliederForm(forms.ModelForm):
             if mitglied.id:
                 mitgliedID = mitglied.id
 
-            mitglied.mandatsreferenz = '{0}_{1}'.format(mitgliedID, datetime.date.today().strftime("%Y%m%d"))
+            mitglied.mandatsreferenz = '{0}{1}'.format(mitgliedID, datetime.date.today().strftime("%d%m%Y"))
 
         if commit:
             mitglied.save()
