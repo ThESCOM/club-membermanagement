@@ -8,7 +8,6 @@ from mitglieder.models import Mitglied
 from mitglieder.forms import MitgliederForm
 
 def main(request):
-    print 'XXXXXXXXXXXXx {0}'.format(request.LANGUAGE_CODE)
     return render(request, 'index.html', { "TITLE": settings.VEREINSNAME})
 
 @login_required
