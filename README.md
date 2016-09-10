@@ -15,5 +15,39 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 * * *
 
+
 1. Introduction
 ===============
+Every club needs to handle its members. But how? I don't really like all these
+excel sheets or commercial solutions. What about an Open-Source web application
+which can be easily used?!
+
+
+2. Functions
+===============
+What can you do with this application?
+
+- add new club members
+- give access to members who needs to view the list/bank data of your members
+- add some information on the start page or on the first page which can be seen
+after login
+
+
+3. How it works
+===============
+
+Without any login you see the default start page with the login menu part on top:
+![](static/screenshots/Selection_118.png)
+
+After pressing the login menu part, you see the login-mask where you login with
+email and password. Default:  
+**Email**: foo@bar.de  
+**Pwd**:testPassword
+![](static/screenshots/Selection_119.png)
+
+After the login you can choose between two different options (Benutzer and
+Vereinsmitglieder)
+![](static/screenshots/Selection_120.png)
+![](static/screenshots/Selection_121.png)
+![](static/screenshots/Selection_122.png)
+
