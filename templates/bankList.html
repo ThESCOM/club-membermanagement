@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
     <div class="container">
-        <h4>Mitglied {{ mitglied.vorname }} {{ mitglied.nachname }} Bank Daten</h4>
-        <a class="btn btn-primary" href="/mitglieder/editMitglied/{{ mitglied.id }}">Mitglied bearbeiten</a><br />
+        <h4>{% trans "Mitglied" %} {{ mitglied.vorname }} {{ mitglied.nachname }} {% trans "Bank Daten" %}</h4>
+        <a class="btn btn-primary" href="/mitglieder/editMitglied/{{ mitglied.id }}">{% trans "Mitglied bearbeiten" %}</a><br />
         <table style="margin-top: 10px;" id="bankTable" class="table table-striped">
             <thead>
                 <tr>
-                    <th>Vorname</th>
-                    <th>Nachname</th>
-                    <th>IBAN</th>
-                    <th>Bic</th>
-                    <th>Bank</th>
-                    <th>Kontoinhaber</th>
-                    <th>Lastschrift aktiv?</th>
-                    <th>Betrag</th>
+                    <th>{% trans "Vorname" %}</th>
+                    <th>{% trans "Nachname" %}</th>
+                    <th>{% trans "IBAN" %}</th>
+                    <th>{% trans "Bic" %}</th>
+                    <th>{% trans "Bank" %}</th>
+                    <th>{% trans "Kontoinhaber" %}</th>
+                    <th>{% trans "Lastschrift aktiv?" %}</th>
+                    <th>{% trans "Betrag" %}</th>
                 </tr>
             </thead>
             <tbody>

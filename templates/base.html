@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load i18n %}
 <!doctype html>
 <html>
     <head>
@@ -99,22 +100,23 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                    <a href="/">Mitgliederverwaltung</a>
+                    <a href="/">{% trans "Mitgliederverwaltung" %}</a>
                     </li>
                     {% if not user.is_authenticated %}
                     <li><a href="/login">Login</a></li>
                     {% endif %}
                     {% if user.is_authenticated %}
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Vereinsmitglieder<b class="caret"></b></a>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle"
+                            data-toggle="dropdown">{% trans "Vereinsmitglieder" %}<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/mitglieder/list">Liste aller Mitglieder</a></li>
-                                <li><a href="/mitglieder/addMitglied">Mitglied hinzufügen</a></li>
+                                <li><a href="/mitglieder/list">{% trans "Liste aller Mitglieder" %}</a></li>
+                                <li><a href="/mitglieder/addMitglied">{% trans "Mitglied hinzufügen" %}</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Benutzer<b class="caret"></b></a>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "Benutzer" %}<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/user/list">Liste aller Benutzer</a></li>
-                                <li><a href="/user/addUser">Benutzer hinzufügen</a></li>
+                                <li><a href="/user/list">{% trans "Liste aller Benutzer" %}</a></li>
+                                <li><a href="/user/addUser">{% trans "Benutzer hinzufügen" %}</a></li>
                             </ul>
                         </li>
                         <li><a href="/logout">Logout</a></li>

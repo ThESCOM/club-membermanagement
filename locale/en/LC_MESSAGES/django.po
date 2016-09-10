@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Version 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-10 17:02+0200\n"
-"PO-Revision-Date: 2016-06-10 17:03+0100\n"
+"POT-Creation-Date: 2016-09-10 22:06+0200\n"
+"PO-Revision-Date: 2016-09-10 22:10+0100\n"
 "Last-Translator: Max Oberberger <max@oberbergers.de>\n"
 "Language-Team: ThESCOM <max@thescom.de>\n"
 "Language: en\n"
@@ -16,71 +16,179 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
-#: mitglieder/models.py:11
+#: mitglieder/forms/mitglied.py:9 mitglieder/models.py:11
+#: templates/bankList.html:10 templates/list.html:10
 msgid "Vorname"
 msgstr "Surname"
 
-#: mitglieder/models.py:12
+#: mitglieder/forms/mitglied.py:10 mitglieder/models.py:12
+#: templates/bankList.html:11 templates/list.html:11
 msgid "Nachname"
-msgstr ""
+msgstr "Lastname"
 
-#: mitglieder/models.py:13
+#: mitglieder/forms/mitglied.py:11 mitglieder/models.py:13
+#: templates/list.html:12
 msgid "Anschrift"
-msgstr ""
+msgstr "Address"
 
-#: mitglieder/models.py:14
+#: mitglieder/forms/mitglied.py:12 mitglieder/models.py:14
+#: templates/list.html:13
 msgid "PLZ/Ort"
-msgstr ""
+msgstr "Postcode/Town"
 
-#: mitglieder/models.py:15
+#: mitglieder/forms/mitglied.py:13 mitglieder/models.py:15
+#: templates/list.html:14
 msgid "Geburtsdatum"
-msgstr ""
+msgstr "Birthday"
 
-#: mitglieder/models.py:16
+#: mitglieder/forms/mitglied.py:14 mitglieder/models.py:16
+#: templates/list.html:15
 msgid "Telefon"
-msgstr ""
+msgstr "Phone"
 
-#: mitglieder/models.py:17
+#: mitglieder/forms/mitglied.py:15 mitglieder/models.py:17
+#: templates/list.html:16
 msgid "Mobil"
-msgstr ""
+msgstr "Mobile"
 
-#: mitglieder/models.py:18 userAccounts/models.py:8
+#: mitglieder/forms/mitglied.py:16 mitglieder/models.py:18
+#: templates/list.html:17 userAccounts/models.py:8
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
-#: mitglieder/models.py:19
+#: mitglieder/forms/mitglied.py:17 mitglieder/models.py:19
+#: templates/bankList.html:12
 msgid "IBAN"
 msgstr ""
 
-#: mitglieder/models.py:20
+#: mitglieder/forms/mitglied.py:18 mitglieder/models.py:20
+#: templates/bankList.html:13
 msgid "Bic"
 msgstr ""
 
-#: mitglieder/models.py:21
+#: mitglieder/forms/mitglied.py:19 mitglieder/models.py:21
+#: templates/bankList.html:14
 msgid "Bank"
 msgstr ""
 
-#: mitglieder/models.py:22
+#: mitglieder/forms/mitglied.py:20 mitglieder/models.py:22
+#: templates/bankList.html:15
 msgid "Kontoinhaber"
 msgstr "Depositor"
 
-#: mitglieder/models.py:23
+#: mitglieder/forms/mitglied.py:21 mitglieder/models.py:23
 msgid "Lastschrift aktiv"
-msgstr ""
+msgstr "debit activ"
 
-#: mitglieder/models.py:24
+#: mitglieder/forms/mitglied.py:22 mitglieder/models.py:24
 msgid "Barzahler"
-msgstr ""
+msgstr "cash payer"
 
-#: mitglieder/models.py:25
+#: mitglieder/forms/mitglied.py:23 mitglieder/models.py:25
+#: templates/bankList.html:17
 msgid "Betrag"
-msgstr ""
+msgstr "Amount"
+
+#: mitglieder/forms/mitglied.py:24
+#| msgid "Mandatsreferenz"
+msgid "Mandatsreferenz (ID_Datum)"
+msgstr "ID"
+
+#: mitglieder/forms/mitglied.py:25
+msgid "Mailverteiler Mitglied"
+msgstr "distilist member"
 
 #: mitglieder/models.py:26
 msgid "Mandatsreferenz"
 msgstr "ID"
 
-#: templates/addMitglieder.html:80
+#: mitglieder/models.py:27
+msgid "Mailverteiler"
+msgstr "distilist"
+
+#: mitgliederverwaltung/settings.py:140
+msgid "German"
+msgstr ""
+
+#: mitgliederverwaltung/settings.py:141
+msgid "English"
+msgstr ""
+
+#: templates/addMitglieder.html:84 templates/base.html:113
+#: templates/list.html:6
 msgid "Mitglied hinzufügen"
 msgstr "add member"
+
+#: templates/addMitglieder.html:84 templates/editMitglieder.html:84
+msgid "Abbrechen"
+msgstr "Cancel"
+
+#: templates/bankList.html:5
+msgid "Mitglied"
+msgstr "Member"
+
+#: templates/bankList.html:5
+msgid "Bank Daten"
+msgstr "Bank data"
+
+#: templates/bankList.html:6 templates/editMitglieder.html:84
+#: templates/list.html:35
+#| msgid "Mitglied hinzufügen"
+msgid "Mitglied bearbeiten"
+msgstr "edit member"
+
+#: templates/bankList.html:16
+#| msgid "Lastschrift aktiv"
+msgid "Lastschrift aktiv?"
+msgstr "debit activ?"
+
+#: templates/base.html:103 templates/index.html:5
+msgid "Mitgliederverwaltung"
+msgstr "Membermanagement"
+
+#: templates/base.html:110
+msgid "Vereinsmitglieder"
+msgstr "Members"
+
+#: templates/base.html:112
+#| msgid "Mailverteiler Mitglied"
+msgid "Liste aller Mitglieder"
+msgstr "List of all members"
+
+#: templates/base.html:116
+msgid "Benutzer"
+msgstr "User"
+
+#: templates/base.html:118
+msgid "Liste aller Benutzer"
+msgstr "List all users"
+
+#: templates/base.html:119 templates/userList.html:6
+#| msgid "Mitglied hinzufügen"
+msgid "Benutzer hinzufügen"
+msgstr "add member"
+
+#: templates/list.html:5
+#| msgid "Mitglied hinzufügen"
+msgid "Mitglieder Liste"
+msgstr "Member list"
+
+#: templates/list.html:34
+msgid "Bank Daten anzeigen"
+msgstr "show bank data"
+
+#: templates/list.html:36
+#| msgid "Mitglied hinzufügen"
+msgid "Mitglied entfernen"
+msgstr "delete member"
+
+#: templates/userList.html:5
+msgid "Benutzer Liste"
+msgstr "User list"
+
+#: templates/userList.html:10
+#| msgid "Vorname"
+msgid "Username"
+msgstr "username"

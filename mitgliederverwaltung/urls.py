@@ -16,16 +16,21 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf.urls.i18n import i18n_patterns
 
 import mitglieder.views
 import userAccounts.views
 
 urlpatterns = [
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     #url(r'^admin/', admin.site.urls),
     url(r'^accounts/login/', userAccounts.views.login, name='login'),
     url(r'^login$', userAccounts.views.login, name='login'),
     url(r'^logout/', userAccounts.views.logout),
+]
+
+urlpatterns += i18n_patterns(
     url(r'^user/', include('userAccounts.urls', namespace='user')),
     url(r'^mitglieder/', include('mitglieder.urls', namespace='mitglieder')),
-    url(r'^$', mitglieder.views.main)
-]
+    url(r'^$', mitglieder.views.main),
+)

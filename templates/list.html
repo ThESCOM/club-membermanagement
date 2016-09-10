@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
     <div class="container">
-        <h4>Mitglieder Liste</h4>
-        <a class="btn btn-primary" href="/mitglieder/addMitglied/">Mitglied hinzufügen</a><br />
+        <h4>{% trans "Mitglieder Liste" %}</h4>
+        <a class="btn btn-primary" href="/mitglieder/addMitglied/">{% trans "Mitglied hinzufügen" %}</a><br />
         <table style="margin-top: 10px;" id="mitgliederTable" class="table table-striped">
             <thead>
                 <tr>
-                    <th>Vorname</th>
-                    <th>Nachname</th>
-                    <th>Anschrift</th>
-                    <th>PLZ/Ort</th>
-                    <th>Geburtsdatum</th>
-                    <th>Telefon</th>
-                    <th>Mobil</th>
-                    <th>Email</th>
+                    <th>{% trans "Vorname" %}</th>
+                    <th>{% trans "Nachname" %}</th>
+                    <th>{% trans "Anschrift" %}</th>
+                    <th>{% trans "PLZ/Ort" %}</th>
+                    <th>{% trans "Geburtsdatum" %}</th>
+                    <th>{% trans "Telefon" %}</th>
+                    <th>{% trans "Mobil" %}</th>
+                    <th>{% trans "Email" %}</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -30,9 +31,9 @@
                     <td>{{ entry.telefon }}</td>
                     <td>{{ entry.mobil }}</td>
                     <td>{{ entry.email }}</td>
-                    <td><a title="Bank Daten anzeigen" href="/mitglieder/getBankData/{{ entry.id }}"><span class="glyphicon glyphicon-piggy-bank"></span></a></td>
-                    <td><a title="Mitglied bearbeiten" href="/mitglieder/editMitglied/{{ entry.id }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a title="Mitglied entfernen" href="/mitglieder/deleteMitglied/{{ entry.id }}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <td><a title="{% trans "Bank Daten anzeigen" %}" href="/mitglieder/getBankData/{{ entry.id }}"><span class="glyphicon glyphicon-piggy-bank"></span></a></td>
+                    <td><a title="{% trans "Mitglied bearbeiten" %}" href="/mitglieder/editMitglied/{{ entry.id }}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a title="{% trans "Mitglied entfernen" %}" href="/mitglieder/deleteMitglied/{{ entry.id }}"><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
                 {% endfor %}
             </tbody>

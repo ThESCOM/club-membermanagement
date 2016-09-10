@@ -1,27 +1,28 @@
 import datetime
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 from mitglieder.models import Mitglied, BETRAG
 import datetime
 
 class MitgliederForm(forms.ModelForm):
 
-    vorname = forms.CharField(widget = forms.widgets.TextInput, label = "Vorname")
-    nachname = forms.CharField(widget = forms.widgets.TextInput,label = "Nachname")
-    anschrift = forms.CharField(widget = forms.widgets.TextInput, label ="Anschrift")
-    plz = forms.CharField(widget = forms.widgets.TextInput, label= "PLZ/Ort")
-    geburtsdatum = forms.DateField(widget = forms.widgets.DateInput(format='%Y-%m-%d'), label="Geburtsdatum", initial=datetime.datetime.now().date(), input_formats=['%Y-%m-%d'])
-    telefon = forms.CharField(widget = forms.widgets.TextInput, label = "Telefon", required = False)
-    mobil = forms.CharField(widget = forms.widgets.TextInput, label = "Mobil", required = False)
-    email = forms.CharField(widget = forms.widgets.TextInput, label = "Email", required = False)
-    iban = forms.CharField(widget = forms.widgets.TextInput, label = "IBAN", required = False)
-    bic = forms.CharField(widget = forms.widgets.TextInput, label = "Bic", required = False)
-    bank = forms.CharField(widget = forms.widgets.TextInput, label = "Bank", required = False)
-    kontoinhaber = forms.CharField(widget = forms.widgets.TextInput, label = "Kontoinhaber", required = False)
-    lastschrift = forms.BooleanField(widget=forms.CheckboxInput, label='Lastschrift aktiv', required=False)
-    barzahler = forms.BooleanField(widget=forms.CheckboxInput, label='Barzahler',required=False)
-    betrag = forms.CharField(widget=forms.Select(choices=BETRAG),label="Betrag")
-    mandatsreferenz = forms.CharField(widget=forms.widgets.TextInput, label="Mandatsreferenz (ID_Datum)", required=False)
-    mailverteiler = forms.BooleanField(widget=forms.CheckboxInput, label='Mailverteiler Mitglied', required=False)
+    vorname = forms.CharField(widget = forms.widgets.TextInput, label = _("Vorname"))
+    nachname = forms.CharField(widget = forms.widgets.TextInput,label = _("Nachname"))
+    anschrift = forms.CharField(widget = forms.widgets.TextInput, label =_("Anschrift"))
+    plz = forms.CharField(widget = forms.widgets.TextInput, label= _("PLZ/Ort"))
+    geburtsdatum = forms.DateField(widget = forms.widgets.DateInput(format='%Y-%m-%d'), label=_("Geburtsdatum"), initial=datetime.datetime.now().date(), input_formats=['%Y-%m-%d'])
+    telefon = forms.CharField(widget = forms.widgets.TextInput, label = _("Telefon"), required = False)
+    mobil = forms.CharField(widget = forms.widgets.TextInput, label = _("Mobil"), required = False)
+    email = forms.CharField(widget = forms.widgets.TextInput, label = _("Email"), required = False)
+    iban = forms.CharField(widget = forms.widgets.TextInput, label = _("IBAN"), required = False)
+    bic = forms.CharField(widget = forms.widgets.TextInput, label = _("Bic"), required = False)
+    bank = forms.CharField(widget = forms.widgets.TextInput, label = _("Bank"), required = False)
+    kontoinhaber = forms.CharField(widget = forms.widgets.TextInput, label = _("Kontoinhaber"), required = False)
+    lastschrift = forms.BooleanField(widget=forms.CheckboxInput, label=_('Lastschrift aktiv'), required=False)
+    barzahler = forms.BooleanField(widget=forms.CheckboxInput, label=_('Barzahler'),required=False)
+    betrag = forms.CharField(widget=forms.Select(choices=BETRAG),label=_("Betrag"))
+    mandatsreferenz = forms.CharField(widget=forms.widgets.TextInput, label=_("Mandatsreferenz (ID_Datum)"), required=False)
+    mailverteiler = forms.BooleanField(widget=forms.CheckboxInput, label=_('Mailverteiler Mitglied'), required=False)
 
 
     class Meta:

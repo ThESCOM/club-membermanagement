@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
     <div class="container">
-        <h4>Benutzer Liste</h4>
-        <a class="btn btn-primary" href="/user/addUser">Benutzer hinzufügen</a><br />
+        <h4>{% trans "Benutzer Liste" %}</h4>
+        <a class="btn btn-primary" href="/user/addUser">{% trans "Benutzer hinzufügen" %}</a><br />
         <table style="margin-top: 10px;" id="userTable" class="table table-striped">
             <thead>
                 <tr>
-                    <th>Username</th>
+                    <th>{% trans "Username" %}</th>
                     <th></th>
                 </tr>
             </thead>
