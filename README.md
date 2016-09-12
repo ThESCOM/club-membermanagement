@@ -22,6 +22,9 @@ Every club needs to handle its members. But how? I don't really like all these
 excel sheets or commercial solutions. What about an Open-Source web application
 which can be easily used?!
 
+The default language for the output strings are in German, because I developed
+this program for a German Club.
+
 
 2. Functions
 ===============
