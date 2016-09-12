@@ -19,13 +19,13 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         allMitglieder = Mitglieder.objects.all()
 
-        # uebermorgen
+        # day after tomorrow
         overmorrow = date.today()+timedelta(3)
 
         birthdayList = []
         for entry in allMitglieder:
             if entry.geburtsdatum.day == overmorrow.day and entry.geburtsdatum.month == overmorrow.month:
-                birthdayString = '{0} {1} ({4})wird am {2}. {3} Jahre alt.'.format(entry.vorname.encode('utf-8', 'strict'), entry.nachname.encode('utf-8', 'strict'), entry.geburtsdatum.strftime("%d.%m"), self.calculate_age(entry.geburtsdatum) + 1, entry.geburtsdatum.strftime("%d.%m.%Y"))
+                birthdayString = '{0} {1} ({4}) wird am {2}. {3} Jahre alt.'.format(entry.vorname.encode('utf-8', 'strict'), entry.nachname.encode('utf-8', 'strict'), entry.geburtsdatum.strftime("%d.%m"), self.calculate_age(entry.geburtsdatum) + 1, entry.geburtsdatum.strftime("%d.%m.%Y"))
 
                 if entry.email:
                     birthdayString += ' Email: {0}'.format(entry.email)
