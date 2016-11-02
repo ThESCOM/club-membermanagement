@@ -54,3 +54,15 @@ Vereinsmitglieder)
 ![](static/screenshots/Selection_121.png)
 ![](static/screenshots/Selection_122.png)
 
+4. Management Commands
+===============
+
+## Birthday Notification
+
+If you configure the management command "birtday notification" as a cronjob
+which runs every day, you get every day a notification via email about the
+members which have a birthday in two days.
+
+To receive an email, you have to configure an email address you want to send
+from and to. Therefore just replace 'EMAIL' in `mitglieder/tools.py` with your
+prefered address.
